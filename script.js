@@ -1,24 +1,10 @@
-document.getElementById("calculate").addEventListener("click", function () {
-    let sum = 0;
+document.querySelectorAll("input[type='number']").forEach(input => {
+    input.addEventListener("input", function () {
+        let amount = parseInt(this.value) || 0;
+        let type = this.id;
 
-    function addMoney(id, value, multiplier) {
-        let amount = parseFloat(document.getElementById(id).value);
-        sum += amount * multiplier;
-        dropMoney(amount, id); // Kutsutaan animaatiota
-    }
-
-    addMoney("50e", 50, 50);
-    addMoney("20e", 20, 20);
-    addMoney("10e", 10, 10);
-    addMoney("5e", 5, 5);
-    addMoney("2e", 2, 2);
-    addMoney("1e", 1, 1);
-    addMoney("50c", 0.50, 0.5);
-    addMoney("20c", 0.20, 0.2);
-    addMoney("10c", 0.10, 0.1);
-    addMoney("5c", 0.05, 0.05);
-
-    document.getElementById("sum").textContent = sum.toFixed(2) + "€";
+        dropMoney(amount, type);
+    });
 });
 
 function dropMoney(amount, type) {
@@ -27,17 +13,21 @@ function dropMoney(amount, type) {
         money.classList.add("money");
 
         if (type.includes("e")) {
-            money.classList.add("bill"); // Setelit
+            money.classList.add("bill"); // Setelit isompia
         } else {
-            money.classList.add("coin"); // Kolikot
+            money.classList.add("coin"); // Kolikot pienempiä
         }
 
-        money.style.left = Math.random() * window.innerWidth + "px";
-        document.body.appendChild(money);
+        // Arpoo horisontaalisen paikan ja pienet satunnaissiirtymät
+        let xPosition = Math.random() * window.innerWidth * 0.6 + window.innerWidth * 0.2;
+        money.style.left = xPosition + "px";
 
+        document.getElementById("money-pile").appendChild(money);
+
+        // Poistetaan vain ylimääräiset, mutta ei heti
         setTimeout(() => {
-            money.remove();
-        }, 3000); // Poistetaan 3s jälkeen
+            money.classList.add("stacked");
+        }, 2000);
     }
 }
 
