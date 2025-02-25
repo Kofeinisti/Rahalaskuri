@@ -1,70 +1,52 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background: linear-gradient(to bottom, black, yellow);
+    background: linear-gradient(to bottom, #000000, #444444, #bbbb77, #ffff00);
+    background-size: 100% 200%;
+    animation: taustaHov 6s infinite alternate ease-in-out;
     color: white;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
+    overflow: hidden;
+    position: relative;
 }
 
-.container {
-    width: 350px;
-    background: rgba(34, 34, 34, 0.9);
-    /* Kevyesti läpinäkyvä */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+@keyframes taustaHov {
+    from {
+        background-position: 0% 100%;
+    }
+    to {
+        background-position: 0% 0%;
+    }
 }
 
-h1 {
-    font-size: 24px;
-    margin-bottom: 15px;
+/* Savuefekti */
+body::before, body::after {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, rgba(0,0,0,0) 70%);
+    opacity: 0.2;
+    animation: savuLiike 8s infinite ease-in-out alternate;
+    pointer-events: none;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 15px;
+body::after {
+    animation-delay: 4s;
 }
 
-td {
-    padding: 10px;
-    text-align: left;
-}
-
-input {
-    width: 100%;
-    padding: 6px;
-    font-size: 16px;
-    text-align: center;
-    border: 1px solid #444;
-    border-radius: 5px;
-    background: #333;
-    color: white;
-    box-sizing: border-box;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    font-size: 18px;
-    cursor: pointer;
-    background: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background: #45a049;
-}
-
-.summa {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 10px;
+@keyframes savuLiike {
+    0% {
+        transform: translate(-50%, -10%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -30%) scale(1.5);
+        opacity: 0.1;
+    }
 }
