@@ -1,9 +1,9 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background: linear-gradient(to bottom, #000000, #444444, #bbbb77, #ffff00);
+    background: linear-gradient(to bottom, #000000, #333333, #777777, #bbbb77, #ffff88);
     background-size: 100% 200%;
-    animation: taustaHov 6s infinite alternate ease-in-out;
+    animation: taustaAnimaatio 10s infinite alternate ease-in-out;
     color: white;
     height: 100vh;
     display: flex;
@@ -14,39 +14,34 @@ body {
     position: relative;
 }
 
-@keyframes taustaHov {
-    from {
+@keyframes taustaAnimaatio {
+    0% {
         background-position: 0% 100%;
     }
-    to {
+    100% {
         background-position: 0% 0%;
     }
 }
 
 /* Savuefekti */
-body::before, body::after {
-    content: "";
+.savuefekti {
     position: absolute;
-    top: -20%;
+    top: 100%;
     left: 50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, rgba(0,0,0,0) 70%);
-    opacity: 0.2;
-    animation: savuLiike 8s infinite ease-in-out alternate;
-    pointer-events: none;
-}
-
-body::after {
-    animation-delay: 4s;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, rgba(0, 0, 0, 0) 80%);
+    opacity: 0.3;
+    animation: savuLiike 5s infinite ease-in-out;
 }
 
 @keyframes savuLiike {
     0% {
-        transform: translate(-50%, -10%) scale(1);
+        transform: translate(-50%, 0) scale(1);
+        opacity: 0.3;
     }
     100% {
-        transform: translate(-50%, -30%) scale(1.5);
-        opacity: 0.1;
+        transform: translate(-50%, -150px) scale(1.5);
+        opacity: 0;
     }
 }
