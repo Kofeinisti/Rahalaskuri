@@ -1,35 +1,106 @@
+/* Yleiset tyylit */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Vaalean teeman asetus */
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+/* Grid asettelu */
+.grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    text-align: right;
+}
+
+/* Syöttökenttien tyyli */
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+/* Nappien tyyli */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Flashbang (teemanvaihtopainike) */
+#theme-toggle {
+    background-color: #ffcc00;
+    color: black;
+    font-weight: bold;
+}
+
+/* Rahojen putoamisefekti */
 .money {
     position: absolute;
     top: -50px;
     background-size: contain;
     background-repeat: no-repeat;
-    animation: fall 1.5s ease-in forwards;
+    animation: fall 1s ease-in forwards;
 }
 
+/* Setelit */
 .bill {
-    background-image: url('bill.png'); /* Lisää setelikuvasi */
-    width: 160px;
-    height: 80px;
+    background-image: url('bill.png');
+    width: 180px;
+    height: 90px;
 }
 
+/* Kolikot */
 .coin {
-    background-image: url('coin.png'); /* Lisää kolikkokuvasi */
-    width: 50px;
-    height: 50px;
+    background-image: url('coin.png');
+    width: 60px;
+    height: 60px;
 }
 
+/* Putoamisefekti */
 @keyframes fall {
     0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(60vh); opacity: 1; }
+    100% { transform: translateY(65vh); opacity: 1; }
 }
 
-/* Rahakasan tausta */
+/* Rahapino alalaidassa */
 #money-pile {
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     width: 100%;
     height: 150px;
-    background: linear-gradient(to top, #d4af37, transparent);
+    background: linear-gradient(to top, rgba(255, 215, 0, 0.6), transparent);
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
@@ -37,11 +108,11 @@
     align-items: flex-end;
 }
 
-/* Kasautuvat rahat */
+/* Pinoontuvat rahat */
 .money.stacked {
     position: relative;
     animation: none;
     transform: translateY(0);
     opacity: 1;
-    margin: -5px;
+    margin: -3px;
 }
