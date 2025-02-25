@@ -11,8 +11,8 @@ body {
 }
 
 .container {
-    width: 320px;
-    background: #222;
+    width: 350px;
+    background: rgba(34, 34, 34, 0.9); /* Kevyesti läpinäkyvä */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
@@ -30,12 +30,12 @@ table {
 }
 
 td {
-    padding: 8px;
+    padding: 10px;
     text-align: left;
 }
 
 input {
-    width: 70px;
+    width: 100%;
     padding: 6px;
     font-size: 16px;
     text-align: center;
@@ -43,6 +43,7 @@ input {
     border-radius: 5px;
     background: #333;
     color: white;
+    box-sizing: border-box;
 }
 
 button {
