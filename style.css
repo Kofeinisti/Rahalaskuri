@@ -23,43 +23,14 @@ body {
     position: relative;
 }
 
-/* Savuefekti */
-.savu {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, rgba(0,0,0,0) 80%);
-    opacity: 0.3;
-    filter: blur(15px);
-    z-index: 10; /* Nostaa etualalle */
-}
-
-
-/* Liikkuva savu */
-@keyframes savuLiike {
-    0% {
-        transform: translateX(-50%) translateY(0) scale(1);
-        opacity: 0.3;
-    }
-    100% {
-        transform: translateX(-50%) translateY(-250px) scale(1.7);
-        opacity: 0;
-    }
-}
-
-/* Lisää eri kokoisia savuelementtejä */
-.savu:nth-child(2) {
-    left: 40%;
-    animation-delay: 2s;
-    width: 120px;
-    height: 120px;
-}
-
-.savu:nth-child(3) {
-    left: 60%;
-    animation-delay: 3s;
-    width: 100px;
-    height: 100px;
+.taustasavu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.4; /* Säädä savun voimakkuutta */
+    z-index: -1; /* Asetetaan taustalle */
+    filter: blur(5px); /* Pehmennetään hieman */
 }
