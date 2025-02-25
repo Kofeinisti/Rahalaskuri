@@ -8,7 +8,9 @@ document.getElementById("calculate").addEventListener("click", function () {
         parseInt(document.getElementById("1e").value) +
         parseInt(document.getElementById("50c").value) * 0.5 +
         parseInt(document.getElementById("20c").value) * 0.2 +
-        parseInt(document.getElementById("10c").value) * 0.1;
+        parseInt(document.getElementById("10c").value) * 0.1 +
+        parseInt(document.getElementById("5c").value) * 0.05;
+
     
     document.getElementById("sum").textContent = sum.toFixed(2) + "€";
 });
