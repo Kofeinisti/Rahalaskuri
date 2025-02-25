@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #222;
+    background: linear-gradient(to bottom, #222, #ffcc00);
     color: white;
     overflow-x: hidden;
 }
@@ -12,12 +12,13 @@ body {
     background: #333;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
 }
 
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
+    color: #ffcc00;
 }
 
 button {
@@ -25,8 +26,8 @@ button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
-    background: #4CAF50;
-    color: white;
+    background: #ffcc00;
+    color: black;
     border: none;
     border-radius: 5px;
 }
@@ -48,38 +49,5 @@ input {
 }
 
 .money-container {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    border-top: 2px solid #8b6f42;
-    background: linear-gradient(to top, #d4af37, transparent);
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.money {
-    position: absolute;
-    will-change: transform;
-    transition: transform 1s ease-in;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.coin {
-    width: 40px;
-    height: 40px;
-}
-
-.bill {
-    width: 120px;
-    height: 60px;
-}
-
-.money.pile {
-    position: absolute;
-    bottom: 0;
-    transform: translateX(-50%);
-    transition: transform 0.3s ease-in;
+    display: none;
 }
