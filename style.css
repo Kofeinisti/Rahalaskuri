@@ -26,15 +26,16 @@ body {
 /* Savuefekti */
 .savu {
     position: absolute;
-    bottom: 0;
+    top: 50%;
     left: 50%;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, rgba(0,0,0,0) 80%);
-    opacity: 0.2;
-    animation: savuLiike 6s infinite ease-in-out;
-    filter: blur(8px);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, rgba(0,0,0,0) 80%);
+    opacity: 0.3;
+    filter: blur(15px);
+    z-index: 10; /* Nostaa etualalle */
 }
+
 
 /* Liikkuva savu */
 @keyframes savuLiike {
