@@ -1,9 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background: linear-gradient(to bottom, #000000, #333333, #777777, #bbbb77, #ffff88);
-    background-size: 100% 200%;
-    animation: taustaAnimaatio 10s infinite alternate ease-in-out;
+    background: linear-gradient(to bottom, black, #ffcc00);
     color: white;
     height: 100vh;
     display: flex;
@@ -14,34 +12,36 @@ body {
     position: relative;
 }
 
-@keyframes taustaAnimaatio {
-    0% {
-        background-position: 0% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
-}
-
-/* Savuefekti */
-.savuefekti {
+/* Höyryävä savuefekti */
+.savu {
     position: absolute;
-    top: 100%;
+    bottom: 0;
     left: 50%;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, rgba(0, 0, 0, 0) 80%);
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, rgba(0,0,0,0) 70%);
     opacity: 0.3;
     animation: savuLiike 5s infinite ease-in-out;
 }
 
 @keyframes savuLiike {
     0% {
-        transform: translate(-50%, 0) scale(1);
+        transform: translateX(-50%) translateY(0) scale(1);
         opacity: 0.3;
     }
     100% {
-        transform: translate(-50%, -150px) scale(1.5);
+        transform: translateX(-50%) translateY(-200px) scale(1.5);
         opacity: 0;
     }
+}
+
+/* Lisää useita savukiekuroita */
+.savu:nth-child(2) {
+    left: 40%;
+    animation-delay: 2s;
+}
+
+.savu:nth-child(3) {
+    left: 60%;
+    animation-delay: 3s;
 }
