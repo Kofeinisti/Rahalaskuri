@@ -30,7 +30,7 @@ body {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    opacity: 0.4; /* Säädä savun voimakkuutta */
+    opacity: 0.8; /* Säädä savun voimakkuutta */
     z-index: -1; /* Asetetaan taustalle */
     filter: blur(5px); /* Pehmennetään hieman */
 }
