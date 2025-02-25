@@ -8,6 +8,8 @@ document.querySelectorAll("input[type='number']").forEach(input => {
 });
 
 function dropMoney(amount, type) {
+    let pile = document.getElementById("money-pile");
+
     for (let i = 0; i < amount; i++) {
         let money = document.createElement("div");
         money.classList.add("money");
@@ -18,16 +20,16 @@ function dropMoney(amount, type) {
             money.classList.add("coin"); // Kolikot pienempiä
         }
 
-        // Arpoo horisontaalisen paikan ja pienet satunnaissiirtymät
-        let xPosition = Math.random() * window.innerWidth * 0.6 + window.innerWidth * 0.2;
-        money.style.left = xPosition + "px";
+        // Horisontaalinen sijainti satunnaisesti kasan sisällä
+        let xPosition = Math.random() * 200 - 100;
+        money.style.left = `calc(50% + ${xPosition}px)`;
 
-        document.getElementById("money-pile").appendChild(money);
+        pile.appendChild(money);
 
-        // Poistetaan vain ylimääräiset, mutta ei heti
+        // Kun raha putoaa alas, se kasautuu
         setTimeout(() => {
             money.classList.add("stacked");
-        }, 2000);
+        }, 1500);
     }
 }
 

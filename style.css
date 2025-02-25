@@ -8,19 +8,19 @@
 
 .bill {
     background-image: url('bill.png'); /* Lisää setelikuvasi */
-    width: 120px;
-    height: 60px;
+    width: 160px;
+    height: 80px;
 }
 
 .coin {
     background-image: url('coin.png'); /* Lisää kolikkokuvasi */
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 }
 
 @keyframes fall {
     0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(75vh); opacity: 1; }
+    100% { transform: translateY(60vh); opacity: 1; }
 }
 
 /* Rahakasan tausta */
@@ -32,15 +32,16 @@
     background: linear-gradient(to top, #d4af37, transparent);
     overflow: hidden;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: flex-end;
 }
 
-/* Kasaantuvat rahat */
+/* Kasautuvat rahat */
 .money.stacked {
     position: relative;
     animation: none;
     transform: translateY(0);
     opacity: 1;
-    margin-top: -10px;
+    margin: -5px;
 }
