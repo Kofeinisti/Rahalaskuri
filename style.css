@@ -1,24 +1,25 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background: linear-gradient(to bottom, #222, #ffcc00);
+    background: linear-gradient(to bottom, black, yellow);
     color: white;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     max-width: 300px;
-    margin: 50px auto;
+    margin: 100px auto;
     background: #333;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #ffcc00;
 }
 
 button {
@@ -26,8 +27,8 @@ button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
-    background: #ffcc00;
-    color: black;
+    background: #4CAF50;
+    color: white;
     border: none;
     border-radius: 5px;
 }
@@ -48,6 +49,8 @@ input {
     text-align: center;
 }
 
-.money-container {
-    display: none;
+.summa {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
 }

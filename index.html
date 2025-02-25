@@ -4,52 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rahalaskuri</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <div class="container">
         <h1>Rahalaskuri</h1>
-        <button id="theme-toggle">Flashbang</button>
-        
-        <div class="grid">
-            <label for="50e">50€:</label>
-            <input type="number" id="50e" value="0">
-            
-            <label for="20e">20€:</label>
-            <input type="number" id="20e" value="0">
-            
-            <label for="10e">10€:</label>
-            <input type="number" id="10e" value="0">
-            
-            <label for="5e">5€:</label>
-            <input type="number" id="5e" value="0">
-            
-            <label for="2e">2€:</label>
-            <input type="number" id="2e" value="0">
-            
-            <label for="1e">1€:</label>
-            <input type="number" id="1e" value="0">
-            
-            <label for="50c">0.50€:</label>
-            <input type="number" id="50c" value="0">
-            
-            <label for="20c">0.20€:</label>
-            <input type="number" id="20c" value="0">
-            
-            <label for="10c">0.10€:</label>
-            <input type="number" id="10c" value="0">
+        <table>
+            <tr>
+                <td>50€:</td>
+                <td><input type="number" id="e50" value="0"></td>
+            </tr>
+            <tr>
+                <td>20€:</td>
+                <td><input type="number" id="e20" value="0"></td>
+            </tr>
+            <tr>
+                <td>10€:</td>
+                <td><input type="number" id="e10" value="0"></td>
+            </tr>
+            <tr>
+                <td>5€:</td>
+                <td><input type="number" id="e5" value="0"></td>
+            </tr>
+            <tr>
+                <td>2€:</td>
+                <td><input type="number" id="e2" value="0"></td>
+            </tr>
+            <tr>
+                <td>1€:</td>
+                <td><input type="number" id="e1" value="0"></td>
+            </tr>
+            <tr>
+                <td>0.50€:</td>
+                <td><input type="number" id="c50" value="0"></td>
+            </tr>
+            <tr>
+                <td>0.20€:</td>
+                <td><input type="number" id="c20" value="0"></td>
+            </tr>
+            <tr>
+                <td>0.10€:</td>
+                <td><input type="number" id="c10" value="0"></td>
+            </tr>
+            <tr>
+                <td>0.05€:</td>
+                <td><input type="number" id="c05" value="0"></td>
+            </tr>
+        </table>
 
-            <label for="5c">0.05€:</label>
-            <input type="number" id="5c" value="0">
-
-        </div>
-        
-        <button id="calculate">Laske</button>
-        <h2>Summa: <span id="sum">0.00€</span></h2>
+        <button onclick="laske()">Laske</button>
+        <p class="summa">Summa: <span id="summa">0.00</span>€</p>
     </div>
 
     <script src="script.js"></script>
-
-<div id="money-pile"></div>
 </body>
 </html>
