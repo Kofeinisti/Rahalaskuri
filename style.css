@@ -1,0 +1,72 @@
+/* Perusteema (tumma) */
+:root {
+    --bg-color: #1e1e2e;
+    --text-color: white;
+    --button-bg: #4CAF50;
+    --button-hover: #45a049;
+}
+
+.light-mode {
+    --bg-color: white;
+    --text-color: black;
+    --button-bg: #007BFF;
+    --button-hover: #0056b3;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+button {
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+label {
+    text-align: right;
+    font-size: 1.2rem;
+}
+
+input {
+    font-size: 1rem;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    max-width: 100px;
+}

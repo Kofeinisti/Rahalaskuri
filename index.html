@@ -1,105 +1,49 @@
 <!DOCTYPE html>
 <html lang="fi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kassanlasku</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #2C3E50;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        h1 {
-            margin-bottom: 20px;
-        }
-
-        .container {
-            max-width: 400px;
-            margin: auto;
-            background-color: #34495E;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-
-        label,
-        input {
-            display: block;
-            width: 100%;
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-
-        input[type="number"] {
-            padding: 8px;
-            border-radius: 5px;
-            border: none;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #2980B9;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #1F6391;
-        }
-
-        #summa {
-            margin-top: 20px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-    </style>
+    <title>Rahalaskuri</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <h1>Kassanlasku</h1>
     <div class="container">
-        <label>50€:<input type="number" id="euro50" min="0"></label>
-        <label>20€:<input type="number" id="euro20" min="0"></label>
-        <label>10€:<input type="number" id="euro10" min="0"></label>
-        <label>5€:<input type="number" id="euro5" min="0"></label>
-        <label>2€:<input type="number" id="euro2" min="0"></label>
-        <label>1€:<input type="number" id="euro1" min="0"></label>
-        <label>0.5€:<input type="number" id="euro0_5" min="0"></label>
-        <label>0.2€:<input type="number" id="euro0_2" min="0"></label>
-        <label>0.1€:<input type="number" id="euro0_1" min="0"></label>
-        <label>0.05€:<input type="number" id="euro0_05" min="0"></label>
-
-        <button onclick="laskeSumma()">Laske</button>
-        <div id="summa">Summa: 0.0€</div>
+        <h1>Rahalaskuri</h1>
+        <button id="theme-toggle">Vaihda teema</button>
+        
+        <div class="grid">
+            <label for="50e">50€:</label>
+            <input type="number" id="50e" value="0">
+            
+            <label for="20e">20€:</label>
+            <input type="number" id="20e" value="0">
+            
+            <label for="10e">10€:</label>
+            <input type="number" id="10e" value="0">
+            
+            <label for="5e">5€:</label>
+            <input type="number" id="5e" value="0">
+            
+            <label for="2e">2€:</label>
+            <input type="number" id="2e" value="0">
+            
+            <label for="1e">1€:</label>
+            <input type="number" id="1e" value="0">
+            
+            <label for="50c">0.50€:</label>
+            <input type="number" id="50c" value="0">
+            
+            <label for="20c">0.20€:</label>
+            <input type="number" id="20c" value="0">
+            
+            <label for="10c">0.10€:</label>
+            <input type="number" id="10c" value="0">
+        </div>
+        
+        <button id="calculate">Laske</button>
+        <h2>Summa: <span id="sum">0.00€</span></h2>
     </div>
 
-    <script>
-        function laskeSumma() {
-            let arvot = [
-                Number(document.getElementById("euro50").value) * 50,
-                Number(document.getElementById("euro20").value) * 20,
-                Number(document.getElementById("euro10").value) * 10,
-                Number(document.getElementById("euro5").value) * 5,
-                Number(document.getElementById("euro2").value) * 2,
-                Number(document.getElementById("euro1").value) * 1,
-                Number(document.getElementById("euro0_5").value) * 0.5,
-                Number(document.getElementById("euro0_2").value) * 0.2,
-                Number(document.getElementById("euro0_1").value) * 0.1,
-                Number(document.getElementById("euro0_05").value) * 0.05
-            ];
-            let summa = arvot.reduce((a, b) => a + b, 0).toFixed(2);
-            document.getElementById("summa").innerText = `Summa: ${summa}€`;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
-
 </html>
