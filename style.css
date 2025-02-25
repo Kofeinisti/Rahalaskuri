@@ -12,36 +12,53 @@ body {
     position: relative;
 }
 
-/* Höyryävä savuefekti */
+/* Laskurin laatikko */
+.container {
+    width: 320px;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    z-index: 2;
+    position: relative;
+}
+
+/* Savuefekti */
 .savu {
     position: absolute;
     bottom: 0;
     left: 50%;
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, rgba(0,0,0,0) 70%);
-    opacity: 0.3;
-    animation: savuLiike 5s infinite ease-in-out;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, rgba(0,0,0,0) 80%);
+    opacity: 0.2;
+    animation: savuLiike 6s infinite ease-in-out;
+    filter: blur(8px);
 }
 
+/* Liikkuva savu */
 @keyframes savuLiike {
     0% {
         transform: translateX(-50%) translateY(0) scale(1);
         opacity: 0.3;
     }
     100% {
-        transform: translateX(-50%) translateY(-200px) scale(1.5);
+        transform: translateX(-50%) translateY(-250px) scale(1.7);
         opacity: 0;
     }
 }
 
-/* Lisää useita savukiekuroita */
+/* Lisää eri kokoisia savuelementtejä */
 .savu:nth-child(2) {
     left: 40%;
     animation-delay: 2s;
+    width: 120px;
+    height: 120px;
 }
 
 .savu:nth-child(3) {
     left: 60%;
     animation-delay: 3s;
+    width: 100px;
+    height: 100px;
 }
